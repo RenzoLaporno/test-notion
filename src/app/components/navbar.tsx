@@ -16,15 +16,15 @@ import {
       icon: (
         <HomeIcon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
       ),
-      href: '#',
+      href: 'http://localhost:3000',
     },
     {
-      title: 'Products',
-      icon: (
-        <Package className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
+        title: 'Products',
+        icon: (
+          <Package className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+        ),
+        href: 'http://localhost:3000/input', // Update this line
+      },
     {
       title: 'Components',
       icon: (
