@@ -1,27 +1,31 @@
-"use client";
-import { fetchN } from "../fetchdata";
-import ActionButton from "../components/actionButton";
-import { TextEffect } from "../components/core/text-effect";
-import { AppleStyleDock } from "../components/navbar";
-import { TextMorphInput } from "../components/input";
-import ButtonDesign from "../components/button";
+import { fetchN, page } from "@/app/fetchdata";
 
-// export default async function Home({params,}:{params:Promise<{slug:string}>}) {
-  export default  function Home() {
-  // const slug = (await params).slug
+import { TextEffect } from "@/app/components/core/text-effect";
+import { AppleStyleDock } from "@/app/components/navbar";
+import { TextMorphInput } from "@/app/components/input";
+import ButtonDesign from "@/app/components/button";
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ input: string }>;
+}) {
+  // export default function Home() {
+  const slug = (await params).input;
   const data = fetchN();
-  console.log(data);
+  console.log(fetchN());
 
   // Extract the database ID if data is available
-  let databaseId = null;
   // if (Array.isArray(data) && data.length > 0) {
-    // databaseId = data[0].parent.id;
+  // databaseId = data[0].parent.id;
   // }
 
-  console.log("Database ID:", databaseId); // Log the database ID
 
+  const handleClick = () => {
+    page();
+  };
+  
   return (
-
     <div
       className="flex flex-col items-center justify-center min-h-screen"
       style={{
@@ -35,14 +39,17 @@ import ButtonDesign from "../components/button";
       </header>
       <div className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">
         <TextEffect per="char" preset="fade">
-         {/* {slug} */}
-         red
+          {slug}
         </TextEffect>
       </div>
       <div className="flex items-center space-x-4">
         <TextMorphInput />
-        <ButtonDesign />
-    </div>
+        <ButtonDesign label={"Sent"} />
+      </div>
+      <div className="pt-3">
+        {" "}
+        <ButtonDesign label={"Edit"} />
+      </div>
     </div>
   );
 }
