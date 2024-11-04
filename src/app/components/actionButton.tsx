@@ -5,7 +5,7 @@ import { page } from "../fetchdata";
 
 export default function Home() {
   const [clicked, setClicked] = useState(false); // State to track button click
-  const text = clicked ? "Sent!" : "Send"; // Button text
+  const text = "Create" // Button text
 
   const handleClick = () => {
     setClicked(!clicked); // Toggle clicked state

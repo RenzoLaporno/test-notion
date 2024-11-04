@@ -1,8 +1,15 @@
 "use client";
-import { page } from "./fetchdata";
+import { fetchN, page } from "./fetchdata";
 import ActionButton from "./components/actionButton";
 import { TextEffect } from "./components/core/text-effect";
 import { AppleStyleDock } from "./components/navbar";
+import ButtonDesign from "./components/button";
+
+const handleClick = () => {
+  // Redirect to the desired URL
+  fetchN();
+  // window.location.href = "/input"; // Update this URL as needed
+};
 
 export default function Home() {
   return (
@@ -23,9 +30,8 @@ export default function Home() {
         </TextEffect>
       </div>
       <div>
-        <ActionButton />
+        <ButtonDesign label={"Create"} onClick={handleClick} />
       </div>
     </div>
-   
   );
 }

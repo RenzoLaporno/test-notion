@@ -12,13 +12,9 @@ export default async function Home({
 }) {
   // export default function Home() {
   const slug = (await params).input;
-  const data = fetchN();
-  console.log(fetchN());
+  
 
-  // Extract the database ID if data is available
-  // if (Array.isArray(data) && data.length > 0) {
-  // databaseId = data[0].parent.id;
-  // }
+
 
 
   const handleClick = () => {
